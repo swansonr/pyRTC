@@ -1,0 +1,64 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name='pyRTC'
+version='1.0.0'
+description='An object-oriented adaptive optics real-time control software written in Python. The goal is to be a universal and simple to use python package while maintaining enough real-time performance to be widely applicable within the AO community.'
+authors= [
+    {name='Jacob Taylor', email='jacob.taylor@mail.utoronto.ca'},
+    {name='Robin Swanson', email='robin.swanson@utoronto.ca'}
+]
+license='GPL-3.0-or-later'
+license-files = ["LICEN[CS]E*"]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    'numpy',
+    'matplotlib',
+    'PyYaml',
+    'numba',
+    'scipy',
+    'pyqt5',
+    'argparse',
+    'psutil',
+    'optuna',
+    'cmaes',
+    'torch',
+    'numexpr',
+    'astropy',
+    "streamlit>=1.45.1",
+    "watchdog>=6.0.0",
+    "dash-bootstrap-components>=2.0.3",
+]
+classifiers=[
+    'Development Status :: 2 - Pre-Alpha',
+    'Intended Audience :: Science/Research',
+    'License :: OSI Approved :: GNU General Public License (GPL)',
+    'Operating System :: OS Independent',        
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+]
+
+[project.optional-dependencies]
+docs = [
+    "sphinx",
+    "sphinx-autobuild",
+    "sphinx-rtd-theme",
+    "sphinxcontrib.spelling",
+    "sphinx_copybutton",
+]
+
+[project.urls]
+Homepage='https://github.com/jacotay7/pyRTC'
+Issues='https://github.com/jacotay7/pyRTC/issues'
+
+[dependency-groups]
+dev = [
+    "pyrtc",
+]
+
+[tool.uv.sources]
+pyrtc = { workspace = true }
